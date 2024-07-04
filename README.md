@@ -1,8 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a webshop website using [dummyJSON](https://dummyjson.com/)'s API.
 
-## Getting Started
+## How to run
 
-First, run the development server:
+First run a `npm install`/`npm i`.
+
+After that, run the development server:
 
 ```bash
 npm run dev
@@ -16,21 +18,21 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Since this projust uses GitHub authentication you will have to create a new OAuth application [here](https://github.com/settings/developers).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+You will have to create a `.env.local` file in the `/src` folder. In this file you will have to insert the Client ID and the Client secret.
 
-## Learn More
+```
+AUTH_GITHUB_ID=...
+AUTH_GITHUB_SECRET=...
+```
 
-To learn more about Next.js, take a look at the following resources:
+Also run `npx auth secret` in your terminal for a Authetication key that you will have to paste as well to the `.env.local` file.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+AUTH_SECRET=...
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+P.S. Don't pay too much attention to the comments. :)
