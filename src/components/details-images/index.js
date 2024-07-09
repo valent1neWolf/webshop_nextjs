@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 export default function DetailsImages({ detailsData }) {
   const [currentImage, setCurrentImage] = useState(detailsData?.images[0]);
   const [hoverImage, setHoverImage] = useState(null);
+  const [leaveTimeoutId, setLeaveTimeoutId] = useState(null);
   const bracket = "border-2 border-gray-400 rounded-md";
 
   const handleMouseMove = (e) => {
@@ -63,8 +64,14 @@ export default function DetailsImages({ detailsData }) {
                     : ""
                 }`}
                 onClick={() => setCurrentImage(image)}
-                onMouseEnter={() => setHoverImage(image)}
-                onMouseLeave={() => setHoverImage(null)}
+                onMouseEnter={() => {
+                  clearTimeout(leaveTimeoutId);
+                  setHoverImage(image);
+                }}
+                onMouseLeave={() => {
+                  const timeoutId = setTimeout(() => setHoverImage(null), 100);
+                  setLeaveTimeoutId(timeoutId);
+                }}
               />
             ))
           : null}

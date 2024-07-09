@@ -5,11 +5,11 @@ import { redirect } from "next/navigation";
 import PageCounter from "@/components/pagination";
 
 export default async function Home({ searchParams }) {
-  console.log("searchParams", searchParams);
+  // console.log("searchParams", searchParams);
   const pageParam = searchParams?.page;
   const skip = pageParam ? (parseInt(pageParam) - 1) * 32 : 0;
   const getAllProducts = await fetchAllProducts(skip);
-  console.log(getAllProducts);
+  // console.log(getAllProducts);
 
   const getSession = await auth();
 

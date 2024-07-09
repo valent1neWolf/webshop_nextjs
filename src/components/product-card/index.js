@@ -8,20 +8,19 @@ import {
 } from "@/components/ui/card";
 import AddToCartButton from "@/components/add-to-cart-button";
 
+import SingleCardImage from "./single-card-image";
+
 export default function ProductCard({ item }) {
   const router = useRouter();
   return (
     <Card className="transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">
       <CardContent>
         <div
-          className="w-full aspect-w-16 aspect-h-8 lg:h-50 cursor-pointer"
+          className="w-full aspect-w-16 aspect-h-8 lg:h-56 cursor-pointer relative"
+          style={{ minHeight: "200px" }}
           onClick={() => router.push(`${item?.id}`)}
         >
-          <img
-            src={item?.thumbnail}
-            alt={item.title}
-            className="h-full w-full object-cover object-top"
-          />
+          <SingleCardImage item={item} />
         </div>
         <div className="py-3 max-h-50 ">
           <CardTitle

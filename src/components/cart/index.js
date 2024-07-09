@@ -13,6 +13,7 @@ import { useSelector } from "react-redux";
 import { removeFromCart } from "@/store/slices/cart-slice";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/navigation";
+import SingleCartImage from "./single-cart-image";
 
 export default function Cart() {
   const dispatch = useDispatch();
@@ -64,13 +65,7 @@ export default function Cart() {
                         className="border-2 border-gray-300 rounded-md  h-24 flex items-center justify-center w-24"
                         onClick={() => router.push(`${item?.id}`)}
                       >
-                        <img
-                          src={
-                            item?.images[0] ? item?.images[0] : item?.thumbnail
-                          }
-                          alt={item?.title}
-                          className="w-24  h-24 object-contain cursor-pointer"
-                        />
+                        <SingleCartImage item={item} />
                       </div>
                       <p
                         className="text-lg cursor-pointer"
