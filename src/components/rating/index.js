@@ -15,7 +15,7 @@ export default function Rating({ rating, name }) {
                 className="sr-only"
                 value={ratingValue}
               />
-              <span className="text-blue-500 text-2xl">
+              <span className="text-yellow-600 text-2xl">
                 {ratingValue <= rating ? "★" : "☆"}
               </span>
             </label>
@@ -23,9 +23,10 @@ export default function Rating({ rating, name }) {
         );
       })}
       <span
-        className={` text-blue-500 text-base relative ${additionalStyles}`}
+        className={` text-yellow-600 text-base relative ${additionalStyles}`}
         style={{ top: "1px" }}
       >
+        &nbsp;
         {rating}
       </span>
     </div>

@@ -24,13 +24,13 @@ export default async function Home({ searchParams }) {
 
   return (
     <div>
-      <div className="min-h-[80vh] grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 max-w-6xl mx-auto p-2 py-4">
+      <div className="min-h-[80vh] flex flex-col sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 max-w-6xl mx-auto p-2 py-4">
         {getAllProducts && getAllProducts.data && getAllProducts.data.length > 0
           ? getAllProducts.data.map((product) => <ProductCard item={product} />)
           : null}
       </div>
       <div>
-        <PageCounter maxPages={maxPages?.data} />
+        <PageCounter maxPages={maxPages?.data} className="w-min" />
       </div>
     </div>
   );

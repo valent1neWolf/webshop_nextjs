@@ -43,9 +43,7 @@ export default async function ProductDeatails({ params }) {
             <h3 className="mt-5">{detailsData?.description}</h3>
             <div className="mt-5">
               <AddToCartButton productItem={detailsData} />
-              <p className="pt-2 text-blue-500">
-                {detailsData?.shippingInformation}
-              </p>
+              <p className="pt-2 italic">{detailsData?.shippingInformation}</p>
             </div>
           </div>
         </div>

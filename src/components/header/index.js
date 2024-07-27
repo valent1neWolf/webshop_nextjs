@@ -68,8 +68,8 @@ export default function Header({ getSession }) {
           </Link>
         </div>
 
-        <ul className="flex gap-6 items-center justify-between mr-7">
-          <li>
+        <ul className="flex gap-6 items-center justify-between md:mr-7">
+          <li className="hidden md:block">
             <Link
               className="font-semibold p-2 hover:bg-gray-100 rounded-xl"
               href="/"
@@ -100,7 +100,33 @@ export default function Header({ getSession }) {
             action={getSession?.user ? handleOauthSignOut : handleOauthSignIn}
           >
             <Button type="submit">
-              {getSession?.user ? "Sign Out" : "Sign In"}
+              {getSession?.user ? (
+                <>
+                  <p className="hidden md:block">
+                    <span>Sign Out</span>
+                  </p>
+                  <p className="w-5 h-5 md:hidden">
+                    <img
+                      src="/sign-out.svg"
+                      alt="Sign Out"
+                      className="w-full h-full"
+                    />
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p className="hidden md:block">
+                    <span>Sign In</span>
+                  </p>
+                  <p className="w-5 h-5 md:hidden">
+                    <img
+                      src="/sign-in.svg"
+                      alt="Sign In"
+                      className="w-full h-full "
+                    />
+                  </p>
+                </>
+              )}
             </Button>
           </form>
         </div>

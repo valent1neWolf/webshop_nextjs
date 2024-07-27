@@ -13,7 +13,7 @@ import SingleCardImage from "./single-card-image";
 export default function ProductCard({ item }) {
   const router = useRouter();
   return (
-    <Card className="transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">
+    <Card className="transition duration-300 ease-in-out transform sm:hover:scale-105 hover:shadow-lg">
       <CardContent>
         <div
           className="w-full aspect-w-16 aspect-h-8 lg:h-56 cursor-pointer relative"

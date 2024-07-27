@@ -43,7 +43,9 @@ export default function Cart() {
   return (
     <div className="bg-white py-4">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-extrabold text-[#333]">Cart</h2>
+        <h2 className="text-3xl font-extrabold text-[#333] mx-2 lg:mx-0">
+          Cart
+        </h2>
         <div className="overflow-y-auto">
           <Table className="mt-12 w-full border-collapse divide-y">
             {/* <TableCaption>A list of your recent invoices.</TableCaption> */}
@@ -92,27 +94,27 @@ export default function Cart() {
           </Table>
         </div>
         <hr className=" border-t-2 border-gray-300" />
-        <div className=" sm:w-full md:w-1/2 ml-auto mb-2">
-          <div className="flex justify-between items-center mt-5">
+        <div className=" sm:w-full md:w-1/2 ml-auto mb-2 ">
+          <div className="flex justify-between items-center mt-5 mx-2 lg:mx-0">
             <p className="text-lg">Sub-total: </p>
             <p className="text-lg ">{(totalAmount - tax).toFixed(2)} &euro;</p>
           </div>
-          <div className="flex justify-between items-center mt-5">
+          <div className="flex justify-between items-center mt-5 mx-2 lg:mx-0">
             <p className="text-lg ">Tax:</p>
             <p className="text-lg ">{tax.toFixed(2)} &euro;</p>
           </div>
-          <div className="flex justify-between items-center mt-5">
+          <div className="flex justify-between items-center mt-5 mx-2 lg:mx-0">
             <p className="text-lg ">Delivery and duties:</p>
             <p className="text-lg italic">Included</p>
           </div>
           <hr />
-          <div className="flex justify-between items-center mt-5">
+          <div className="flex justify-between items-center mt-5 mx-2 lg:mx-0">
             <p className="text-lg font-semibold">Total:</p>
             <p className="text-lg font-semibold">
               {totalAmount.toFixed(2)} &euro;
             </p>
           </div>
-          <div className="flex justify-end mt-5">
+          <div className="flex justify-end mt-5 mx-2 lg:mx-0">
             <Button className="rounded-xl">Checkout</Button>
           </div>
         </div>

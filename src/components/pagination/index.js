@@ -22,21 +22,24 @@ export default function PageCounter({ maxPages }) {
   }
 
   return (
-    <Pagination className="pb-5">
+    <Pagination className="pb-5 w-full">
       {maxPages && maxPages > 0 ? (
-        <PaginationContent>
+        <PaginationContent className="flex justify-center items-center">
           <PaginationItem
-            className={currentPage === 1 ? disabledClass : "cursor-pointer"}
+            className={`${
+              currentPage === 1 ? disabledClass : "cursor-pointer"
+            } block sm:inline-block`}
             onClick={() =>
               currentPage > 1 && changeCurrentPage(currentPage - 1)
             }
           >
             <PaginationPrevious />
           </PaginationItem>
+          <span className="block sm:hidden mx-2">{currentPage}</span>
           {Array.from({ length: maxPages }, (_, i) => (
             <PaginationItem
               key={i}
-              className="cursor-pointer"
+              className="cursor-pointer hidden sm:inline-block"
               onClick={() => changeCurrentPage(i + 1)}
             >
               <PaginationLink isActive={currentPage === i + 1}>
@@ -45,9 +48,9 @@ export default function PageCounter({ maxPages }) {
             </PaginationItem>
           ))}
           <PaginationItem
-            className={
+            className={`${
               currentPage === maxPages ? disabledClass : "cursor-pointer"
-            }
+            } block sm:inline-block`}
             onClick={() =>
               currentPage < maxPages && changeCurrentPage(currentPage + 1)
             }
