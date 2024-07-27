@@ -3,7 +3,7 @@ import { auth } from "@/auth";
 
 export default async function CommonLayout({ children }) {
   const getSession = await auth();
-  const maintenance = false;
+  const maintenance = true;
   if (maintenance) {
     return (
       <div className="p-20 flex justify-center items-center">
